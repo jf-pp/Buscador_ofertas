@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buscador de ofertas MX</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+  <h1>Buscador de ofertas MX</h1>
+  <p>¿Es oferta de verdad? Compara contra tu precio a batir y el historial, antes de comprar.</p>
+  <p class="aviso">Precios semilla verificados en El Buen Fin 2026 (12–14 nov). No son precios en vivo: re-verifica en la tienda antes de comprar.</p>
+</header>
+<main>
+  <section class="panel">
+    <h2>Buscar en Mercado Libre México</h2>
+    <p>Usa la API pública de Mercado Libre. Si falla, verifica manual en la tienda.</p>
+    <form id="form-ml">
+      <input id="q-ml" type="search" placeholder="Ej. Xiaomi G27Qi 2026" required>
+      <button type="submit">Buscar</button>
+    </form>
+    <div id="resultados-ml" aria-live="polite"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Tu lista de seguimiento</h2>
+    <div class="filtros">
+      <input id="filtro" type="search" placeholder="Filtrar por nombre o tienda">
+      <select id="orden">
+        <option value="descuento">Mejor vs precio a batir</option>
+        <option value="precio-asc">Precio: menor a mayor</option>
+        <option value="precio-desc">Precio: mayor a menor</option>
+      </select>
+      <button id="btn-exportar" type="button">Exportar JSON</button>
+      <label class="importar">Importar JSON <input id="input-importar" type="file" accept="application/json" hidden></label>
+      <button id="btn-restaurar" type="button">Restaurar datos semilla</button>
+    </div>
+    <div id="lista"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Agregar producto</h2>
+    <form id="form-producto">
+      <input name="nombre" placeholder="Nombre exacto del producto" required>
+      <input name="tienda" placeholder="Tienda (ej. Cyberpuerta)" required>
+      <input name="url" type="url" placeholder="https://… (página del producto)">
+      <input name="precioActual" type="number" step="0.01" min="0" placeholder="Precio actual MXN" required>
+      <input name="precioTachado" type="number" step="0.01" min="0" placeholder="Precio tachado MXN (si hay)">
+      <input name="precioABatir" type="number" step="0.01" min="0" placeholder="Precio a batir MXN" required>
+      <input name="promedio30d" type="number" step="0.01" min="0" placeholder="Promedio 30 días MXN (si lo sabes)">
+      <input name="categoria" placeholder="Categoría (ej. Monitor)">
+      <label><input name="verificado" type="checkbox"> Verificado en la página de la tienda</label>
+      <button type="submit">Agregar a la lista</button>
+    </form>
+  </section>
+
+  <section class="panel">
+    <h2>Calculadora de cupón y margen</h2>
+    <form id="form-cupon">
+      <input id="costo" type="number" step="0.01" min="0" value="3949" required>
+      <input id="pct" type="number" step="0.01" min="0" max="100" value="15" placeholder="% del cupón">
+      <input id="tope" type="number" step="0.01" min="0" value="1000" placeholder="Tope de ahorro">
+      <input id="unidades" type="number" min="1" value="1">
+      <input id="cliente" type="number" step="0.01" min="0" value="3849" placeholder="Precio a cliente">
+      <input id="envio" type="number" step="0.01" min="0" value="0" placeholder="Envío">
+      <button type="submit">Calcular</button>
+    </form>
+    <p class="nota">El cupón de una vez por cuenta solo se aplica a 1 unidad. Las demás van a precio de lista.</p>
+    <div id="resultado-cupon" aria-live="polite"></div>
+  </section>
+</main>
+<footer><p>Hecho para comprar en México sin caer en descuentos falsos. Sin cuentas, sin servidor: tus datos quedan en tu navegador (localStorage).</p></footer>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
