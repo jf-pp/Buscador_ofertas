@@ -1,0 +1,15 @@
+:root{--fondo:#f6f4ef;--texto:#1c1c1c;--verde:#1a7a3a;--amarillo:#8a6d00;--rojo:#a11f1f;--borde:#d8d2c4}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.5}
+header,main,footer{max-width:960px;margin:0 auto;padding:1rem}
+header h1{margin-bottom:.2rem}header p{margin:.3rem 0}.aviso{background:#fff3c4;padding:.6rem;border-radius:.5rem}
+.panel{background:#fff;border:1px solid var(--borde);border-radius:.75rem;padding:1rem;margin:1rem 0}
+form{display:flex;flex-wrap:wrap;gap:.5rem}input,select,button{font:inherit;padding:.55rem .7rem;border:1px solid var(--borde);border-radius:.5rem}
+input,select{flex:1 1 200px}button{background:#111;color:#fff;border-color:#111;cursor:pointer}
+.tarjeta{border:1px solid var(--borde);border-radius:.6rem;padding:1rem;margin:.7rem 0}
+.tarjeta h3{margin:.1rem 0}.precio{font-size:1.4rem;font-weight:700}
+.etiqueta{display:inline-block;padding:.15rem .5rem;border-radius:999px;font-weight:700;font-size:.85rem}
+.real{background:#dff2e3;color:var(--verde)}.sospechosa{background:#fff0b3;color:var(--amarillo)}.encima,.sin-ref{background:#f3d9d9;color:var(--rojo)}
+.filtros{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.5rem}.nota,.fuente{color:#555;font-size:.9rem}
+.historial{font-size:.9rem;color:#444}.historial li{margin:.15rem 0}
+.importar{display:inline-flex;align-items:center;padding:.55rem .7rem;border:1px solid var(--borde);border-radius:.5rem;cursor:pointer;background:#eee}
+@media (max-width:600px){.precio{font-size:1.2rem}}
