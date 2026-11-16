@@ -1,0 +1,11 @@
+{
+  "description": "Buscador de ofertas en tiendas online de México: watchlist, historial de precios, detector de descuentos falsos y calculadora de cupones y margen.",
+  "license": "MIT",
+  "name": "buscador-ofertas-mx",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "node --test tests/pricing.test.js"
+  },
+  "type": "module",
+  "version": "0.1.0"
+}
